@@ -21,10 +21,17 @@ const Sidebar = () => {
       </h1>
 
       <div className="flex w-full flex-col gap-3">
-        <Button variant="outline" className="flex w-full justify-start gap-2">
+      <Link href="/dashboard">
+        <Button variant="outline" className={`flex w-full justify-start gap-2
+          ${
+            path === "/dashboard" &&
+            "bg-primary text-white hover:bg-primary"
+          }
+        `}>
           <LayoutDashboardIcon size={16} />
           Dashboard
         </Button>
+      </Link>
 
         <Link href="/dashboard/products">
           <Button
