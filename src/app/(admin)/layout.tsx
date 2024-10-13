@@ -8,7 +8,7 @@ import Sidebar from "./dashboard/components/sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dashboard | FSW Store",
+  title: "Dashboard | MP Store",
   description: "Dashboard administrativa",
 };
 
