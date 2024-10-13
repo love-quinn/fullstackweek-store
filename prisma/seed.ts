@@ -625,6 +625,53 @@ async function main() {
       data: speakers,
     });
 
+    const videoCardCategory = await prisma.category.create({
+      data: {
+        name: "Placas de Vídeo",
+        slug: "videocards",
+        imageUrl:
+          "https://utfs.io/f/X0YtGqwFqxR4EfbtkEUVuAykTxdHh7Mw9rEsOgZcQmqz4iK8",
+      },
+    });
+
+    const videocards = [
+      {
+        name: "AMD Radeon RX 6650 XT SWFT 210, 8GB, GDDR6, FSR, Ray Tracing",
+        slug: "amd-rx-6650-xt-swft-210",
+        description:
+          "A AMD Radeon RX 6650 XT SWFT 210 é uma placa de vídeo ideal para quem busca desempenho avançado em jogos e aplicações gráficas. Com 8GB de memória GDDR6, ela oferece potência de sobra para rodar os jogos mais recentes com gráficos impressionantes e alta taxa de quadros, proporcionando uma experiência fluida e envolvente. Equipada com Ray Tracing, a RX 6650 XT permite gráficos realistas com iluminação e sombras que simulam o comportamento da luz no mundo real, tornando os ambientes dos jogos ainda mais imersivos. Além disso, a tecnologia FSR (FidelityFX Super Resolution) otimiza o desempenho, aumentando a taxa de quadros sem sacrificar a qualidade visual, perfeita para jogadores e criadores de conteúdo que querem aproveitar o máximo de seus jogos e projetos. Seja para jogos exigentes, edição de vídeo ou design gráfico, essa placa de vídeo entrega alta performance e ótima relação custo-benefício.",
+        imageUrls: [
+          "https://utfs.io/f/X0YtGqwFqxR4wtw4wdMRf4Nr0K5vPD1QYmI6onpFjcLAzxlJ",
+          "https://utfs.io/f/X0YtGqwFqxR4opaHyTAsG0eTXHSDwkp6Ic5h2anlb1OyNqZm",
+          "https://utfs.io/f/X0YtGqwFqxR4LEYVyDPlx5PFnqLrVvMQf4RHW02a38I9Gh7g",
+          "https://utfs.io/f/X0YtGqwFqxR4ECRT9XVuAykTxdHh7Mw9rEsOgZcQmqz4iK86",
+        ],
+        basePrice: 1200,
+        categoryId: videoCardCategory.id,
+        discountPercentage: 17, // 10% discount
+      },
+      {
+        name: "Placa de Vídeo ASRock Radeon RX 6600 Challenger D, 8GB, GDDR6, FSR, Ray Tracing",
+        slug: "amd-rx-6600-asrock-challenger",
+        description:
+          "A Placa de Vídeo ASRock Radeon RX 6600 Challenger D é uma excelente opção para quem deseja elevar a experiência nos jogos e nas tarefas gráficas. Com 8GB de memória GDDR6, ela oferece o desempenho necessário para rodar jogos modernos com gráficos de alta qualidade, além de suportar Ray Tracing, que traz efeitos de luz e sombra incrivelmente realistas, tornando os gráficos ainda mais imersivos. Além disso, essa placa conta com a tecnologia FSR (FidelityFX Super Resolution), que melhora a taxa de quadros por segundo (FPS) sem comprometer a qualidade visual, garantindo um desempenho suave, ideal tanto para entusiastas quanto para quem busca uma ótima performance por um preço acessível. Seja para jogos, design gráfico ou edição de vídeos, a RX 6600 oferece um ótimo equilíbrio entre potência e custo-benefício.",
+        imageUrls: [
+          "https://utfs.io/f/X0YtGqwFqxR4xIjKkufhIxm5c4bXgPaTZLWUwCHuF6MqSYR8",
+          "https://utfs.io/f/X0YtGqwFqxR4rrfu6Z1NHE0Fd2pYh74atDgKWjCUvXMyTbuA",
+          "https://utfs.io/f/X0YtGqwFqxR44qV6tOURG6oFbgNI9OiHTpLyaJnQhwKDUert",
+          "https://utfs.io/f/X0YtGqwFqxR43yCCZ7sbX2q4867UMyPxZGd91urLVgmNtWhQ",
+        ],
+        basePrice: 1799,
+        categoryId: videoCardCategory.id,
+        discountPercentage: 40, // 40% discount
+      },
+
+    ];
+
+    await prisma.product.createMany({
+      data: videocards,
+    });
+
     console.log("Seed completed successfully");
   } catch (error) {
     console.error("Error seeding database:", error);
