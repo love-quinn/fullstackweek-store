@@ -15,6 +15,22 @@ export default async function Home() {
     },
   });
 
+  const motherboards = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "motherboards",
+      },
+    },
+  });
+
+  const videocards = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "videocards",
+      },
+    },
+  });
+
   const keyboards = await prismaClient.product.findMany({
     where: {
       category: {
@@ -61,6 +77,37 @@ export default async function Home() {
           <ProductList products={deals} />
         </div>
 
+        {/* COMEÇO */}
+        <div className="flex flex-col lg:flex-row">
+          <Link href="/category/videocards" className="flex flex-1">
+            <PromoBanner
+              src="/banner-videocard.png"
+              alt="Até 55% de desconto em mouses!"
+              className="w-0 flex-1 px-5"
+            />
+          </Link>
+
+          <Link href="/category/motherboards" className="flex flex-1">
+            <PromoBanner
+              src="/banner-placa-mae.png"
+              alt="Até 55% de desconto em fones!"
+              className="hidden w-0 flex-1 lg:block"
+            />
+          </Link>
+        </div>
+        {/* FIM */}
+
+        <div className="flex flex-col gap-3 lg:gap-5">
+          <SectionTitle className="pl-5">Placas de Vídeo</SectionTitle>
+          <ProductList products={videocards} />
+        </div>
+
+        <div className="flex flex-col gap-3 lg:gap-5">
+          <SectionTitle className="pl-5">Placas Mãe</SectionTitle>
+          <ProductList products={motherboards} />
+        </div>
+
+        {/* COMECO */}
         <div className="flex flex-col lg:flex-row">
           <Link href="/category/mouses" className="flex flex-1">
             <PromoBanner
@@ -78,6 +125,7 @@ export default async function Home() {
             />
           </Link>
         </div>
+        {/* FIM */}
 
         <div className="flex flex-col gap-3 lg:gap-5">
           <SectionTitle className="pl-5">Teclados</SectionTitle>
