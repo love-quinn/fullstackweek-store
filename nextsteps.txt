@@ -1,0 +1,5 @@
+14/10/2024
+    Adicionar categoria de placas mãe
+    Remover bg de componentes faltantes de placa de vídeo
+    Remover bg de componentes faltantes de placa mãe
+    Adicionar componentes faltantes de placa mãe

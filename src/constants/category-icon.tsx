@@ -6,6 +6,7 @@ import {
   SpeakerIcon,
   MouseIcon,
   HdmiPort,
+  CircuitBoard,
 } from "lucide-react";
 
 export const CATEGORY_ICON = {
@@ -15,5 +16,6 @@ export const CATEGORY_ICON = {
   mousepads: <SquareIcon size={16} />,
   speakers: <SpeakerIcon size={16} />,
   mouses: <MouseIcon size={16} />,
+  motherboards: <CircuitBoard size={16}/>,
   videocards: <HdmiPort size={16}/>
 };
