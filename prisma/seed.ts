@@ -493,9 +493,9 @@ async function main() {
           "https://utfs.io/f/X0YtGqwFqxR4RTYOHMGt1UgVieTXAuN8WmskdlawEh3PZM5G",
           "https://utfs.io/f/X0YtGqwFqxR49ZTYmfwkewnpzJxRMsgQo2bS1VlchiIUyOLm",
         ],
-        basePrice: 8999,
+        basePrice: 12999,
         categoryId: videoCardCategory.id,
-        discountPercentage: 15,
+        discountPercentage: 8,
       },
       {
         name: "Placa de Vídeo RTX 4070 Dual, MSI, 12GB, GDDR6",
