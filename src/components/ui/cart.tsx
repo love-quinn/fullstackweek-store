@@ -20,7 +20,12 @@ const Cart = () => {
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      toast.warning('Você precisar estar logado para finalizar a comprar')
+      toast.warning('Você precisar estar logado para finalizar a comprar', {
+        style: {
+          background: 'hsl(252 59% 48%)',
+        },
+        className: 'bg-primary'
+      })
       return;
     }
 
