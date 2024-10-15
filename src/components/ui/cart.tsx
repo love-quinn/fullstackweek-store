@@ -11,6 +11,7 @@ import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import { createOrder } from "@/actions/order";
 import { useSession } from "next-auth/react";
+import { toast } from "sonner";
 
 const Cart = () => {
   const { data } = useSession();
@@ -19,7 +20,7 @@ const Cart = () => {
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
-      // TODO: redirecionar para o login
+      toast.warning('Você precisar estar logado para finalizar a comprar')
       return;
     }
 
