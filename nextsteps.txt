@@ -8,5 +8,9 @@ https://fullstackweek-store-git-main-love-quinns-projects.vercel.app/
     Preparar imagem em png sem background✅
     Ajustar descrição de todos os items✅
 
+15/10/2024
+    Adicionar alerta de que o usuário deve estar logado ao tentar finalizar compra
+    
+
 
     
