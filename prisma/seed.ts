@@ -466,7 +466,7 @@ async function main() {
         ],
         basePrice: 999,
         categoryId: videoCardCategory.id,
-        discountPercentage: 20,
+        discountPercentage: 25,
       },
       {
         name: "Placa de Vídeo Radeon RX 580 Black, 8GB, GDDR5, Edição Limitada",
@@ -480,7 +480,7 @@ async function main() {
         ],
         basePrice: 899,
         categoryId: videoCardCategory.id,
-        discountPercentage: 20,
+        discountPercentage: 25,
       },
       {
         name: "Placa de Vídeo RTX 4090, 24GB, GDDR6X",
@@ -488,10 +488,10 @@ async function main() {
         description:
           "A Placa de Vídeo RTX 4090 é a mais poderosa da linha NVIDIA, com 24GB de memória GDDR6X, oferecendo desempenho excepcional para jogos em 4K e aplicações profissionais como renderização e IA. Com suporte ao Ray Tracing e DLSS 3.0, a RTX 4090 garante gráficos ultrarrealistas e desempenho de ponta.",
         imageUrls: [
-          "https://utfs.io/f/X0YtGqwFqxR49ZTYmfwkewnpzJxRMsgQo2bS1VlchiIUyOLm",
-          "https://utfs.io/f/X0YtGqwFqxR4RTYOHMGt1UgVieTXAuN8WmskdlawEh3PZM5G",
           "https://utfs.io/f/X0YtGqwFqxR4fEqXe2s1GnUvxoB0I7NWJl4CwrsTHq3i2PhY",
           "https://utfs.io/f/X0YtGqwFqxR4GQA2PPFqV2ERBWwvSAxprg7YyIkaPM0feuNJ",
+          "https://utfs.io/f/X0YtGqwFqxR4RTYOHMGt1UgVieTXAuN8WmskdlawEh3PZM5G",
+          "https://utfs.io/f/X0YtGqwFqxR49ZTYmfwkewnpzJxRMsgQo2bS1VlchiIUyOLm",
         ],
         basePrice: 8999,
         categoryId: videoCardCategory.id,
@@ -571,7 +571,7 @@ async function main() {
         ],
         basePrice: 700,
         categoryId: motherboardCategory.id,
-        discountPercentage: 15,
+        discountPercentage: 25,
       },
       {
         name: "Placa Mãe Gigabyte H610, Chipset H610, Intel LGA 1700, mATX, DDR4",
@@ -601,7 +601,7 @@ async function main() {
         ],
         basePrice: 1500,
         categoryId: motherboardCategory.id,
-        discountPercentage: 12,
+        discountPercentage: 18,
       },
       {
         name: "Placa Mãe Asus TUF Gaming B550M-Plus WIFI II, Chipset B550, AMD AM4, mATX, DDR4",
@@ -614,7 +614,7 @@ async function main() {
           "https://utfs.io/f/X0YtGqwFqxR4gX4oA6LZJ9ktbSRyaWeoHVUAn6C1jqY38GPT",
           "https://utfs.io/f/X0YtGqwFqxR4zbmWXiTU5MoOstAHvrBkz8iuwPmIZfN3UbhT",
         ],
-        basePrice: 850,
+        basePrice: 1399,
         categoryId: motherboardCategory.id,
         discountPercentage: 10,
       },
