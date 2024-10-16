@@ -210,6 +210,7 @@ const ProfileForm = () => {
                           </Label>
                         </div>
                       ))}
+                    <FormMessage/>
                     </RadioGroup>
                   )}
                 />

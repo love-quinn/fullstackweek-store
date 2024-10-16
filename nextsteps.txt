@@ -9,7 +9,15 @@ https://fullstackweek-store-git-main-love-quinns-projects.vercel.app/
     Ajustar descrição de todos os items✅
 
 15/10/2024
-    Adicionar alerta de que o usuário deve estar logado ao tentar finalizar compra
+    Adicionar alerta de que o usuário deve estar logado ao tentar finalizar compra✅
+    Começar sheet de dashboard para adicionar produto✅
+    Integrar com form do shadcn✅
+
+16/10/2024
+    Exibir <FormMessage/> caso categoria não seja selecionada(Add produto)✅
+    Adicionar campo de produto com desconto
+    Capturar porcentagem do desconto
+    exibir condicionalmente preço com desconto
     
 
 
