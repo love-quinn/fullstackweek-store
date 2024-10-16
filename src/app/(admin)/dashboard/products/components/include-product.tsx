@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm, Controller } from "react-hook-form";
-import { z } from "zod";
+import { nullable, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,10 +29,17 @@ import {
 // Zod schema for validation
 const productSchema = z.object({
   name: z.string().nonempty("Nome é obrigatório"),
+  productPrice: z
+    .number()
+    .positive("Preço deve ser positvo")
+    .refine((value) => !isNaN(value), {
+      message: "Insira um valor numérico válido para o preço",
+    }),
 });
 
 const ProfileForm = () => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [formattedPrice, setFormattedPrice] = useState("R$ 0,00");
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -42,17 +49,25 @@ const ProfileForm = () => {
     fetchCategories();
   }, []);
 
-  // Initialize useForm with Zod schema validation
   const form = useForm<z.infer<typeof productSchema>>({
     resolver: zodResolver(productSchema),
     defaultValues: {
       name: "",
+      productPrice: 0,
     },
   });
 
-  // Handle form submission
   const onSubmit = (values: z.infer<typeof productSchema>) => {
     console.log(values);
+  };
+
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>, field: any) => {
+    const inputValue = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    const numericValue = parseFloat(inputValue) / 100; // Transformar string em número com 2 casas decimais
+
+    const formatted = `R$ ${numericValue.toFixed(2).replace(".", ",")}`; // Formata com 2 casas decimais
+    setFormattedPrice(formatted);
+    field.onChange(numericValue);
   };
 
   return (
@@ -79,6 +94,7 @@ const ProfileForm = () => {
             </SheetHeader>
             <div className="flex flex-grow flex-col gap-3 overflow-auto px-2">
               <div className="mt-3 flex flex-col gap-2">
+                {/* Nome */}
                 <FormField
                   control={form.control}
                   name="name"
@@ -88,11 +104,35 @@ const ProfileForm = () => {
                       <FormControl>
                         <Input type="text" placeholder="Nome" {...field} />
                       </FormControl>
-                      <FormMessage/>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
+
+              {/* Preço */}
+              <div className="mt-3 flex flex-col gap-2">
+              <FormField
+                  control={form.control}
+                  name="productPrice"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Preço</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="text"
+                          placeholder={"R$ 0,00"}
+                          value={formattedPrice}
+                          onChange={(e) => handlePriceChange(e, field)}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              
             </div>
             <SheetFooter className="mt-auto w-full">
               <Button type="submit" className="w-full">
