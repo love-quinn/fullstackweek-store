@@ -17,21 +17,23 @@ const Sidebar = () => {
   return (
     <div className="flex min-w-[300px] flex-col items-center gap-8 border-r border-solid border-accent bg-background p-8">
       <h1 className="text-lg font-semibold">
-        <span className="text-primary">MP</span> Store
+        <Link href={"/"}>
+          <span className="text-primary">MP</span> Store
+        </Link>
       </h1>
 
       <div className="flex w-full flex-col gap-3">
-      <Link href="/dashboard">
-        <Button variant="outline" className={`flex w-full justify-start gap-2
-          ${
-            path === "/dashboard" &&
-            "bg-primary text-white hover:bg-primary"
-          }
-        `}>
-          <LayoutDashboardIcon size={16} />
-          Dashboard
-        </Button>
-      </Link>
+        <Link href="/dashboard">
+          <Button
+            variant="outline"
+            className={`flex w-full justify-start gap-2
+          ${path === "/dashboard" && "bg-primary text-white hover:bg-primary"}
+        `}
+          >
+            <LayoutDashboardIcon size={16} />
+            Dashboard
+          </Button>
+        </Link>
 
         <Link href="/dashboard/products">
           <Button
